@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import pl from '@angular/common/locales/pl';
+import { FirebaseModule } from './firebase/firebase.module';
 
 registerLocaleData(pl);
 
@@ -23,6 +24,7 @@ registerLocaleData(pl);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FirebaseModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: pl_PL }],
   bootstrap: [AppComponent],
