@@ -1,0 +1,9 @@
+export enum HelpRequestState {
+  REQUESTED = 'REQUESTED',
+  ACCEPTED = 'ACCEPTED',
+  CANCELED = 'CANCELED',
+  DONE = 'DONE',
+  FAILED = 'FAILED',
+  DELETED = 'DELETED',
+  RESIGNED = 'RESIGNED',
+}
