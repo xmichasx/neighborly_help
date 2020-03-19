@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OfferHelpService } from '../../service/offer-help.service';
 
 @Component({
   selector: 'nh-offer-help',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OfferHelpComponent implements OnInit {
   // TODO: This will be smart component
-  constructor() {}
+  constructor(private offerHelpService: OfferHelpService) {}
 
   ngOnInit() {}
+
+  getOfferHelp() {
+    return this.offerHelpService.getOfferData();
+  }
 }
