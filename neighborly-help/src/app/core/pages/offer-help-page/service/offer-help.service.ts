@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { PaginationList } from '../../../shared/shared/shared-list/shared-list.component';
 import { of } from 'rxjs';
+import { PaginationList } from '../../../shared/shared';
 
 @Injectable({
   providedIn: 'root',

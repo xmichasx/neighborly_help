@@ -7,7 +7,6 @@ import { OfferHelpService } from '../../service/offer-help.service';
   styleUrls: ['./offer-help.component.scss'],
 })
 export class OfferHelpComponent implements OnInit {
-  // TODO: This will be smart component
   constructor(private offerHelpService: OfferHelpService) {}
 
   ngOnInit() {}

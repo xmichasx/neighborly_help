@@ -7,18 +7,7 @@ import {
   IGetRowsParams,
   SortChangedEvent,
 } from 'ag-grid-community';
-
-export interface PaginationList {
-  data: any[];
-  totalElements: number;
-}
-
-export interface ColumnsDef {
-  headerName: string;
-  field: string;
-  sortable: boolean;
-  filter: boolean;
-}
+import { ColumnsDef, PaginationList } from '../..';
 
 @Component({
   selector: 'nh-shared-list',
@@ -54,16 +43,16 @@ export class SharedListComponent {
   constructor() {}
 
   onCellClick($event: any) {
-    console.log($event.data);
+    //console.log($event.data);
   }
 
   onGridSortChanged = (event: SortChangedEvent) => {
-    console.log(event.api.getSortModel());
+    //console.log(event.api.getSortModel());
     this.sortingChanged.emit(event.api.getSortModel());
   };
 
   onGridFilterChange = (event: FilterChangedEvent) => {
-    console.log(event.api.getFilterModel());
+    //console.log(event.api.getFilterModel());
     this.filterChanged.emit(event.api.getFilterModel());
   };
 

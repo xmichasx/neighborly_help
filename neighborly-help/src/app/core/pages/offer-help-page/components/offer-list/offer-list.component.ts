@@ -18,7 +18,6 @@ export class OfferListComponent implements OnInit {
       field: 'id',
       sortable: true,
       filter: true,
-      visible: false,
     },
     { headerName: 'Make', field: 'make', sortable: true, filter: true },
     { headerName: 'Model', field: 'model', sortable: true, filter: true },

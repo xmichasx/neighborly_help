@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedListComponent } from './shared-list/shared-list.component';
+import { SharedListComponent } from './components/shared-list';
 import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
