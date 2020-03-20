@@ -5,6 +5,7 @@ import { FirebaseAddress } from './firebase-address';
 import { FirebaseRate } from './firebase-rate';
 
 export interface FirebaseHelpRequest {
+  id: string;
   creatorID: string;
   type: FirebaseActivityType;
   date: firestore.Timestamp;

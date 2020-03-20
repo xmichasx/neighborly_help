@@ -3,8 +3,6 @@ import { FirebaseHelpRequest } from '../firebase-model/firebase-help-request';
 import { FirebaseAddress } from '../firebase-model/firebase-address';
 import { Rate } from 'src/app/model/rate';
 import { FirebaseRate } from '../firebase-model/firebase-rate';
-import { AppUser } from '../firebase-model/firebase-app-user';
-import { type } from 'os';
 import { ActivityType } from 'src/app/model/activity-type';
 import { FirebaseActivityType } from '../firebase-model/firebase-activity-type';
 import { FirebaseHelpRequestState } from '../firebase-model/firebase-help-request-state';
@@ -13,10 +11,11 @@ import { Coords } from 'src/app/model/coords';
 import { firestore } from 'firebase';
 import { Address } from 'src/app/model/address';
 
-function mapHelpRequestFromFirebase(
+export function mapHelpRequestFromFirebase(
   firebaseHelpRequest: FirebaseHelpRequest
 ): HelpRequest {
   return <HelpRequest>{
+    id: firebaseHelpRequest.id,
     creatorID: firebaseHelpRequest.creatorID,
     type: mapActivityTypeFromFirebase(firebaseHelpRequest.type),
     date: firebaseHelpRequest.date.toDate(),
@@ -32,7 +31,9 @@ function mapHelpRequestFromFirebase(
   };
 }
 
-function mapAdressFromFirebase(firebaseAddress: FirebaseAddress): Address {
+export function mapAdressFromFirebase(
+  firebaseAddress: FirebaseAddress
+): Address {
   return <Address>{
     region: firebaseAddress.region,
     city: firebaseAddress.city,
@@ -42,26 +43,28 @@ function mapAdressFromFirebase(firebaseAddress: FirebaseAddress): Address {
   };
 }
 
-function mapRateFromFirebase(firebaseRate: FirebaseRate): Rate {
-  return <Rate>{
-    rate: firebaseRate.rate,
-    comment: firebaseRate.comment,
-  };
+export function mapRateFromFirebase(firebaseRate: FirebaseRate): Rate {
+  return firebaseRate
+    ? <Rate>{
+        rate: firebaseRate.rate,
+        comment: firebaseRate.comment,
+      }
+    : undefined;
 }
 
-function mapActivityTypeFromFirebase(
+export function mapActivityTypeFromFirebase(
   firebaseActivityType: FirebaseActivityType
 ): ActivityType {
   return <ActivityType>(<unknown>firebaseActivityType);
 }
 
-function mapHelpRequestStateFromFirebase(
+export function mapHelpRequestStateFromFirebase(
   firebaseHelpRequestState: FirebaseHelpRequestState
 ): HelpRequestState {
   return <HelpRequestState>(<unknown>firebaseHelpRequestState);
 }
 
-function mapGeoPointToCoords(localization: firestore.GeoPoint): Coords {
+export function mapGeoPointToCoords(localization: firestore.GeoPoint): Coords {
   return <Coords>{
     latitude: localization.latitude,
     longitude: localization.longitude,
