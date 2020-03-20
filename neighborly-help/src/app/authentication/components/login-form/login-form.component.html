@@ -1,0 +1,5 @@
+<form [formGroup]="formGroup" (ngSubmit)="onLogin()">
+  <input formControlName="username" nz-input placeholder="Nazwa uzytkownika" />
+  <input formControlName="password" nz-input placeholder="Haslo" />
+  <button type="submit" nz-button nzType="primary">Zaloguj się</button>
+</form>
